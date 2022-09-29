@@ -73,7 +73,9 @@ public class Interstitial {
                     setAd(null);
                     Log.w("godot", "AdMob: onAdDismissedFullScreenContent");
                     defaultInterstitialListener.onInterstitialClosed();
-                    load();
+                    // We do not want to load the next ad every time interstitial is closed
+                    // If we want this, we will do this in one of the callbacks
+                    //load();
                 }
 
                 @Override
